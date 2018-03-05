@@ -179,6 +179,7 @@ module.exports.errorLogger = function (opts) {
               json['short-body'] = util.inspect(json.body).substring(0, 20);
             }
 
+            console.log(json);
             if (!json) {
                 logFn.call(childLogger, format(meta));
             } else {
