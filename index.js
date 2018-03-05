@@ -179,7 +179,9 @@ module.exports.errorLogger = function (opts) {
               json['short-body'] = util.inspect(json.body).substring(0, 20);
             }
 
-            console.log(json.req.headers);
+            //console.log(json.req.headers);
+            delete json.req.headers.cookie;
+
             if (!json) {
                 logFn.call(childLogger, format(meta));
             } else {
